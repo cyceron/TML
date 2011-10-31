@@ -1,0 +1,742 @@
+Archive member included because of file (symbol)
+
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+                              ads1247.o (sqrt)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+                              /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o) (__ieee754_sqrt)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+                              /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o) (isnan)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_lib_ver.o)
+                              /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o) (__fdlib_version)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+                              /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o) (matherr)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_udivsi3.o)
+                              mbrtu.o (__udivsi3)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_dvmd_tls.o)
+                              /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_udivsi3.o) (__div0)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubdf3.o)
+                              ads1247.o (__subdf3)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivdf3.o)
+                              ads1247.o (__muldf3)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpdf2.o)
+                              /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o) (__ltdf2)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixdfsi.o)
+                              ads1247.o (__fixdfsi)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixunsdfsi.o)
+                              ad5422.o (__fixunsdfsi)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_truncdfsf2.o)
+                              ad5422.o (__truncdfsf2)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubsf3.o)
+                              ad5422.o (__floatsisf)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivsf3.o)
+                              ad5422.o (__mulsf3)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpsf2.o)
+                              ad5422.o (__lesf2)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+                              /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o) (__errno)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+                              /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o) (_impure_ptr)
+/cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+                              ads1247.o (memcpy)
+
+Allocating common symbols
+Common symbol       size              file
+
+pxMBFrameCBTransmitterEmpty
+                    0x4               mb.o
+pxMBPortCBTimerExpired
+                    0x4               mb.o
+ucRTUBuf            0x100             mbrtu.o
+pxMBFrameCBByteReceived
+                    0x4               mb.o
+pxMBFrameCBTransmitFSMCur
+                    0x4               mb.o
+pxMBFrameCBReceiveFSMCur
+                    0x4               mb.o
+usRegInputBuf       0x64              main.o
+ch                  0x40              main.o
+VIC_Temp            0x4               port.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+CODE             0x00000000         0x00020000         xr
+DATA             0x40000000         0x00010000         rw
+IAP6             0x00006000         0x00001000         rw
+IAP7             0x00007000         0x00001000         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ads1247.o
+LOAD main.o
+LOAD startup.o
+LOAD ad5422.o
+LOAD mb.o
+LOAD mbcrc.o
+LOAD mbfuncholding.o
+LOAD mbrtu.o
+LOAD port.o
+LOAD portevent.o
+LOAD portserial.o
+LOAD porttimer.o
+LOAD mbutils.o
+LOAD ds18b20.o
+LOAD armint.o
+LOAD flash_nvol.o
+LOAD rtc.o
+LOAD /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a
+START GROUP
+LOAD /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a
+LOAD /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a
+END GROUP
+
+.text           0x00000000     0x58b4
+ *startup.o(.text)
+ .text          0x00000000      0x160 startup.o
+                0x00000000                _startup
+ *(.text)
+ .text          0x00000160      0xd44 ads1247.o
+                0x00000198                ads1247_init
+                0x000003e8                Thermocouple
+                0x0000026c                ads1247_BurnoutCurrentSense
+                0x000009b8                PT100
+                0x000008e4                offset
+ .text          0x00000ea4      0x868 main.o
+                0x00000eb4                eMBRegDiscreteCB
+                0x000010f0                main
+                0x00000ea4                eMBRegInputCB
+                0x00000ebc                eMBRegHoldingCB
+                0x00000eac                eMBRegCoilsCB
+ .text          0x0000170c      0x374 ad5422.o
+                0x00001744                AD5422_init
+                0x000018b0                AD5422_SetOutputVorI
+ .text          0x00001a80      0x4b4 mb.o
+                0x00001b24                eMBDisable
+                0x00001a80                eMBClose
+                0x00001b80                eMBPoll
+                0x00001ad0                eMBEnable
+                0x00001d48                eMBRegisterCB
+                0x00001e1c                eMBInit
+ .text          0x00001f34       0x60 mbcrc.o
+                0x00001f34                usMBCRC16
+ .text          0x00001f94      0x1b0 mbfuncholding.o
+                0x00001f94                eMBFuncReadHoldingRegister
+                0x000020ec                eMBFuncWriteHoldingRegister
+                0x00002050                eMBFuncWriteMultipleHoldingRegister
+ .text          0x00002144      0x4b4 mbrtu.o
+                0x0000253c                eMBRTUStart
+                0x00002578                eMBRTUInit
+                0x000021b0                xMBRTUTransmitFSM
+                0x00002278                xMBRTUReceiveFSM
+                0x00002374                eMBRTUSend
+                0x00002144                xMBRTUTimerT35Expired
+                0x00002478                eMBRTUReceive
+                0x0000250c                eMBRTUStop
+ .text          0x000025f8       0x34 port.o
+                0x000025f8                EnterCriticalSection
+                0x00002614                ExitCriticalSection
+ .text          0x0000262c       0x78 portevent.o
+                0x0000262c                xMBPortEventInit
+                0x00002668                xMBPortEventGet
+                0x00002644                xMBPortEventPost
+ .text          0x000026a4      0x380 portserial.o
+                0x000026a4                vMBPortClose
+                0x00002874                vMBPortSerialEnable
+                0x00002824                xMBPortSerialGetByte
+                0x000026a8                xMBPortSerialInit
+                0x000027f8                xMBPortSerialPutByte
+ .text          0x00002a24       0xe4 porttimer.o
+                0x00002a24                xMBPortTimersInit
+                0x00002aa8                vMBPortTimersDisable
+                0x00002a8c                vMBPortTimersEnable
+ .text          0x00002b08       0xe8 mbutils.o
+                0x00002b7c                xMBUtilGetBits
+                0x00002b08                xMBUtilSetBits
+                0x00002bc8                prveMBError2Exception
+ .text          0x00002bf0      0x4b8 ds18b20.o
+                0x00002d1c                onewire_write
+                0x00002edc                ds1820_read
+                0x00002bf0                output_low
+                0x00002dfc                onewire_read
+                0x00002c24                delay_us
+                0x00002c70                delay_ms
+                0x00002c10                Timer_W8
+                0x00002cb8                onewire_reset
+ .text          0x000030a8       0x78 armint.o
+                0x000030d8                restore_fiq
+                0x000030a8                enable_irq
+                0x000030b8                enable_fiq
+                0x00003104                restore_irq
+                0x000030c8                disable_fiq
+                0x000030f4                disable_irq
+ .text          0x00003120      0xf08 flash_nvol.o
+                0x00003400                NVOL_SetVariableRecord
+                0x00003308                NVOL_GetVariable
+                0x00003a64                NVOL_Init
+                0x00003888                NVOL_SetVariable
+ .text          0x00004028       0xfc rtc.o
+                0x00004028                rtc_init
+                0x0000406c                rtc_isr
+ .text          0x00004124      0x120 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+                0x00004124                sqrt
+ .text          0x00004244      0x264 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+                0x00004244                __ieee754_sqrt
+ .text          0x000044a8       0x30 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+                0x000044a8                isnan
+ .text          0x000044d8        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_lib_ver.o)
+ .text          0x000044d8        0x8 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+                0x000044d8                matherr
+ .text          0x000044e0      0x114 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_udivsi3.o)
+                0x000044e0                __udivsi3
+                0x000044e0                __aeabi_uidiv
+                0x000045dc                __aeabi_uidivmod
+ .text          0x000045f4        0x4 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_dvmd_tls.o)
+                0x000045f4                __aeabi_ldiv0
+                0x000045f4                __div0
+                0x000045f4                __aeabi_idiv0
+ .text          0x000045f8      0x430 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubdf3.o)
+                0x000049bc                __floatdidf
+                0x0000493c                __floatsidf
+                0x00004914                __aeabi_ui2d
+                0x000045f8                __aeabi_drsub
+                0x00004968                __extendsfdf2
+                0x00004604                __adddf3
+                0x00004914                __floatunsidf
+                0x00004604                __aeabi_dadd
+                0x000049a8                __aeabi_ul2d
+                0x00004600                __aeabi_dsub
+                0x000049a8                __floatundidf
+                0x0000493c                __aeabi_i2d
+                0x000049bc                __aeabi_l2d
+                0x00004968                __aeabi_f2d
+                0x00004600                __subdf3
+ .text          0x00004a28      0x49c /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivdf3.o)
+                0x00004cb8                __aeabi_ddiv
+                0x00004a28                __aeabi_dmul
+                0x00004cb8                __divdf3
+                0x00004a28                __muldf3
+ .text          0x00004ec4      0x140 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpdf2.o)
+                0x00004fbc                __aeabi_dcmple
+                0x00004ed4                __cmpdf2
+                0x00004ed4                __eqdf2
+                0x00004ec4                __gtdf2
+                0x00004f74                __aeabi_cdcmple
+                0x00004f58                __aeabi_cdrcmple
+                0x00004ecc                __ltdf2
+                0x00004fa4                __aeabi_dcmplt
+                0x00004ecc                __ledf2
+                0x00004fec                __aeabi_dcmpgt
+                0x00004fd4                __aeabi_dcmpge
+                0x00004ed4                __nedf2
+                0x00004f8c                __aeabi_dcmpeq
+                0x00004f74                __aeabi_cdcmpeq
+                0x00004ec4                __gedf2
+ .text          0x00005004       0x5c /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixdfsi.o)
+                0x00005004                __fixdfsi
+                0x00005004                __aeabi_d2iz
+ .text          0x00005060       0x54 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixunsdfsi.o)
+                0x00005060                __fixunsdfsi
+                0x00005060                __aeabi_d2uiz
+ .text          0x000050b4       0xa0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_truncdfsf2.o)
+                0x000050b4                __aeabi_d2f
+                0x000050b4                __truncdfsf2
+ .text          0x00005154      0x2ac /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubsf3.o)
+                0x00005160                __aeabi_fadd
+                0x0000515c                __subsf3
+                0x00005324                __aeabi_i2f
+                0x0000515c                __aeabi_fsub
+                0x00005354                __floatdisf
+                0x00005324                __floatsisf
+                0x00005344                __floatundisf
+                0x0000531c                __aeabi_ui2f
+                0x00005354                __aeabi_l2f
+                0x00005344                __aeabi_ul2f
+                0x00005154                __aeabi_frsub
+                0x0000531c                __floatunsisf
+                0x00005160                __addsf3
+ .text          0x00005400      0x2f8 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivsf3.o)
+                0x00005598                __divsf3
+                0x00005598                __aeabi_fdiv
+                0x00005400                __mulsf3
+                0x00005400                __aeabi_fmul
+ .text          0x000056f8      0x110 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpsf2.o)
+                0x000057f0                __aeabi_fcmpgt
+                0x00005700                __lesf2
+                0x00005708                __nesf2
+                0x000057d8                __aeabi_fcmpge
+                0x000056f8                __gtsf2
+                0x000057c0                __aeabi_fcmple
+                0x00005708                __eqsf2
+                0x00005708                __cmpsf2
+                0x00005700                __ltsf2
+                0x00005778                __aeabi_cfcmple
+                0x000056f8                __gesf2
+                0x00005790                __aeabi_fcmpeq
+                0x00005768                __aeabi_cfrcmple
+                0x000057a8                __aeabi_fcmplt
+                0x00005778                __aeabi_cfcmpeq
+ .text          0x00005808       0x10 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+                0x00005808                __errno
+ .text          0x00005818        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .text          0x00005818       0x9c /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+                0x00005818                memcpy
+ *(.glue_7t)
+ .glue_7t       0x000058b4        0x0 ads1247.o
+ .glue_7t       0x000058b4        0x0 main.o
+ .glue_7t       0x000058b4        0x0 startup.o
+ .glue_7t       0x000058b4        0x0 ad5422.o
+ .glue_7t       0x000058b4        0x0 mb.o
+ .glue_7t       0x000058b4        0x0 mbcrc.o
+ .glue_7t       0x000058b4        0x0 mbfuncholding.o
+ .glue_7t       0x000058b4        0x0 mbrtu.o
+ .glue_7t       0x000058b4        0x0 port.o
+ .glue_7t       0x000058b4        0x0 portevent.o
+ .glue_7t       0x000058b4        0x0 portserial.o
+ .glue_7t       0x000058b4        0x0 porttimer.o
+ .glue_7t       0x000058b4        0x0 mbutils.o
+ .glue_7t       0x000058b4        0x0 ds18b20.o
+ .glue_7t       0x000058b4        0x0 armint.o
+ .glue_7t       0x000058b4        0x0 flash_nvol.o
+ .glue_7t       0x000058b4        0x0 rtc.o
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_lib_ver.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_udivsi3.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_dvmd_tls.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubdf3.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivdf3.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpdf2.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixdfsi.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixunsdfsi.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_truncdfsf2.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubsf3.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivsf3.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpsf2.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .glue_7t       0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+ *(.glue_7)
+ .glue_7        0x000058b4        0x0 ads1247.o
+ .glue_7        0x000058b4        0x0 main.o
+ .glue_7        0x000058b4        0x0 startup.o
+ .glue_7        0x000058b4        0x0 ad5422.o
+ .glue_7        0x000058b4        0x0 mb.o
+ .glue_7        0x000058b4        0x0 mbcrc.o
+ .glue_7        0x000058b4        0x0 mbfuncholding.o
+ .glue_7        0x000058b4        0x0 mbrtu.o
+ .glue_7        0x000058b4        0x0 port.o
+ .glue_7        0x000058b4        0x0 portevent.o
+ .glue_7        0x000058b4        0x0 portserial.o
+ .glue_7        0x000058b4        0x0 porttimer.o
+ .glue_7        0x000058b4        0x0 mbutils.o
+ .glue_7        0x000058b4        0x0 ds18b20.o
+ .glue_7        0x000058b4        0x0 armint.o
+ .glue_7        0x000058b4        0x0 flash_nvol.o
+ .glue_7        0x000058b4        0x0 rtc.o
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_lib_ver.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_udivsi3.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_dvmd_tls.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubdf3.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivdf3.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpdf2.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixdfsi.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixunsdfsi.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_truncdfsf2.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubsf3.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivsf3.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpsf2.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .glue_7        0x000058b4        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+                0x000058b4                . = ALIGN (0x4)
+
+.rodata         0x000058b4      0x278
+ *(.rodata)
+ .rodata        0x000058b4       0x6c ads1247.o
+                0x000058bc                Z2
+                0x000058cc                Z4
+                0x000058ec                A3
+                0x000058d4                A0
+                0x00005914                A8
+                0x000058fc                A5
+                0x000058f4                A4
+                0x0000590c                A7
+                0x000058e4                A2
+                0x000058c4                Z3
+                0x000058b4                Z1
+                0x000058dc                A1
+                0x00005904                A6
+ .rodata        0x00005920      0x200 mbcrc.o
+ .rodata        0x00005b20        0x4 flash_nvol.o
+ .rodata        0x00005b24        0x4 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_lib_ver.o)
+                0x00005b24                __fdlib_version
+ .rodata        0x00005b28        0x4 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+                0x00005b28                _global_impure_ptr
+
+.rodata.str1.4  0x00005b2c        0xc
+ .rodata.str1.4
+                0x00005b2c        0x5 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+                                  0x8 (size before relaxing)
+ *fill*         0x00005b31        0x3 00
+ .rodata.str1.4
+                0x00005b34        0x4 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+                0x00005b38                . = ALIGN (0x4)
+                0x00005b38                _etext = .
+                0x00005b38                PROVIDE (etext, .)
+
+.iap_section6   0x00006000     0x1000
+ *(.sec6)
+ .sec6          0x00006000     0x1000 flash_nvol.o
+
+.iap_section7   0x00007000     0x1000
+ *(.sec7)
+ .sec7          0x00007000     0x1000 flash_nvol.o
+
+.data           0x40000000      0x4a0 load address 0x00005b38
+                0x40000000                _data = .
+ *(.data)
+ .data          0x40000000        0x0 ads1247.o
+ .data          0x40000000        0x2 main.o
+                0x40000000                usRegInputStart
+ .data          0x40000002        0x0 startup.o
+ .data          0x40000002        0x0 ad5422.o
+ *fill*         0x40000002        0x2 00
+ .data          0x40000004       0x84 mb.o
+ .data          0x40000088        0x0 mbcrc.o
+ .data          0x40000088        0x0 mbfuncholding.o
+ .data          0x40000088        0x0 mbrtu.o
+ .data          0x40000088        0x0 port.o
+ .data          0x40000088        0x0 portevent.o
+ .data          0x40000088        0x0 portserial.o
+ .data          0x40000088        0x0 porttimer.o
+ .data          0x40000088        0x0 mbutils.o
+ .data          0x40000088        0x4 ds18b20.o
+ .data          0x4000008c        0x0 armint.o
+ .data          0x4000008c       0x10 flash_nvol.o
+ .data          0x4000009c        0x0 rtc.o
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_lib_ver.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_udivsi3.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_dvmd_tls.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubdf3.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivdf3.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpdf2.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixdfsi.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixunsdfsi.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_truncdfsf2.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubsf3.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivsf3.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpsf2.o)
+ .data          0x4000009c        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .data          0x4000009c      0x404 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+                0x4000009c                _impure_ptr
+ .data          0x400004a0        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+                0x400004a0                . = ALIGN (0x4)
+                0x400004a0                _edata = .
+                0x400004a0                PROVIDE (edata, .)
+
+.bss            0x400004a0      0x52c
+                0x400004a0                __bss_start = .
+                0x400004a0                __bss_start__ = .
+ *(.bss)
+ .bss           0x400004a0        0x0 ads1247.o
+ .bss           0x400004a0        0x0 main.o
+ .bss           0x400004a0        0x0 startup.o
+ .bss           0x400004a0        0x0 ad5422.o
+ .bss           0x400004a0       0x24 mb.o
+ .bss           0x400004c4        0x0 mbcrc.o
+ .bss           0x400004c4        0x0 mbfuncholding.o
+ .bss           0x400004c4       0x10 mbrtu.o
+ .bss           0x400004d4        0x0 port.o
+ .bss           0x400004d4        0x8 portevent.o
+ .bss           0x400004dc        0x0 portserial.o
+ .bss           0x400004dc        0x0 porttimer.o
+ .bss           0x400004dc        0x0 mbutils.o
+ .bss           0x400004dc        0x8 ds18b20.o
+ .bss           0x400004e4        0x0 armint.o
+ .bss           0x400004e4      0x32c flash_nvol.o
+ .bss           0x40000810        0x0 rtc.o
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_lib_ver.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_udivsi3.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_dvmd_tls.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubdf3.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivdf3.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpdf2.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixdfsi.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixunsdfsi.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_truncdfsf2.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubsf3.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivsf3.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpsf2.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .bss           0x40000810        0x0 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+ *(COMMON)
+ COMMON         0x40000810       0xa4 main.o
+                0x40000810                usRegInputBuf
+                0x40000874                ch
+ COMMON         0x400008b4       0x14 mb.o
+                0x400008b4                pxMBFrameCBTransmitterEmpty
+                0x400008b8                pxMBPortCBTimerExpired
+                0x400008bc                pxMBFrameCBByteReceived
+                0x400008c0                pxMBFrameCBTransmitFSMCur
+                0x400008c4                pxMBFrameCBReceiveFSMCur
+ COMMON         0x400008c8      0x100 mbrtu.o
+                0x400008c8                ucRTUBuf
+ COMMON         0x400009c8        0x4 port.o
+                0x400009c8                VIC_Temp
+                0x400009cc                . = ALIGN (0x4)
+                0x400009cc                __bss_end__ = .
+                0x400009cc                __bss_end__ = .
+                0x400009cc                _end = .
+                0x400009cc                PROVIDE (end, .)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000      0x1b0
+ *(.comment)
+ .comment       0x00000000       0x12 ads1247.o
+ .comment       0x00000012       0x12 main.o
+ .comment       0x00000024       0x12 ad5422.o
+ .comment       0x00000036       0x12 mb.o
+ .comment       0x00000048       0x12 mbcrc.o
+ .comment       0x0000005a       0x12 mbfuncholding.o
+ .comment       0x0000006c       0x12 mbrtu.o
+ .comment       0x0000007e       0x12 port.o
+ .comment       0x00000090       0x12 portevent.o
+ .comment       0x000000a2       0x12 portserial.o
+ .comment       0x000000b4       0x12 porttimer.o
+ .comment       0x000000c6       0x12 mbutils.o
+ .comment       0x000000d8       0x12 ds18b20.o
+ .comment       0x000000ea       0x12 armint.o
+ .comment       0x000000fc       0x12 flash_nvol.o
+ .comment       0x0000010e       0x12 rtc.o
+ .comment       0x00000120       0x12 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+ .comment       0x00000132       0x12 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+ .comment       0x00000144       0x12 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+ .comment       0x00000156       0x12 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_lib_ver.o)
+ .comment       0x00000168       0x12 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+ .comment       0x0000017a       0x12 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .comment       0x0000018c       0x12 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .comment       0x0000019e       0x12 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x220
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+ .debug_aranges
+                0x00000020       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+ .debug_aranges
+                0x00000040       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+ .debug_aranges
+                0x00000060       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+ .debug_aranges
+                0x00000080       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x000000a0       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_dvmd_tls.o)
+ .debug_aranges
+                0x000000c0       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubdf3.o)
+ .debug_aranges
+                0x000000e0       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivdf3.o)
+ .debug_aranges
+                0x00000100       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpdf2.o)
+ .debug_aranges
+                0x00000120       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixdfsi.o)
+ .debug_aranges
+                0x00000140       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixunsdfsi.o)
+ .debug_aranges
+                0x00000160       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_truncdfsf2.o)
+ .debug_aranges
+                0x00000180       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubsf3.o)
+ .debug_aranges
+                0x000001a0       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivsf3.o)
+ .debug_aranges
+                0x000001c0       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpsf2.o)
+ .debug_aranges
+                0x000001e0       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .debug_aranges
+                0x00000200       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+
+.debug_pubnames
+                0x00000000      0x114
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x1b /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+ .debug_pubnames
+                0x0000001b       0x25 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+ .debug_pubnames
+                0x00000040       0x1c /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+ .debug_pubnames
+                0x0000005c       0x26 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_lib_ver.o)
+ .debug_pubnames
+                0x00000082       0x1e /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+ .debug_pubnames
+                0x000000a0       0x1e /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .debug_pubnames
+                0x000000be       0x39 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .debug_pubnames
+                0x000000f7       0x1d /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+
+.debug_info     0x00000000     0x1eae
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x17f /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+ .debug_info    0x0000017f      0x22f /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+ .debug_info    0x000003ae      0x151 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+ .debug_info    0x000004ff       0xcc /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_lib_ver.o)
+ .debug_info    0x000005cb      0x135 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+ .debug_info    0x00000700       0x68 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_udivsi3.o)
+ .debug_info    0x00000768       0x68 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x000007d0       0x67 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubdf3.o)
+ .debug_info    0x00000837       0x67 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivdf3.o)
+ .debug_info    0x0000089e       0x67 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpdf2.o)
+ .debug_info    0x00000905       0x67 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixdfsi.o)
+ .debug_info    0x0000096c       0x67 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixunsdfsi.o)
+ .debug_info    0x000009d3       0x67 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_truncdfsf2.o)
+ .debug_info    0x00000a3a       0x67 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubsf3.o)
+ .debug_info    0x00000aa1       0x67 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivsf3.o)
+ .debug_info    0x00000b08       0x67 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpsf2.o)
+ .debug_info    0x00000b6f      0x913 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .debug_info    0x00001482      0x922 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .debug_info    0x00001da4      0x10a /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+
+.debug_abbrev   0x00000000      0x7e0
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0xc7 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+ .debug_abbrev  0x000000c7      0x11e /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+ .debug_abbrev  0x000001e5       0xd4 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+ .debug_abbrev  0x000002b9       0x5a /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_lib_ver.o)
+ .debug_abbrev  0x00000313       0x95 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+ .debug_abbrev  0x000003a8       0x14 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x000003bc       0x14 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x000003d0       0x14 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubdf3.o)
+ .debug_abbrev  0x000003e4       0x14 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivdf3.o)
+ .debug_abbrev  0x000003f8       0x14 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpdf2.o)
+ .debug_abbrev  0x0000040c       0x14 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixdfsi.o)
+ .debug_abbrev  0x00000420       0x14 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixunsdfsi.o)
+ .debug_abbrev  0x00000434       0x14 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_truncdfsf2.o)
+ .debug_abbrev  0x00000448       0x14 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubsf3.o)
+ .debug_abbrev  0x0000045c       0x14 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivsf3.o)
+ .debug_abbrev  0x00000470       0x14 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpsf2.o)
+ .debug_abbrev  0x00000484      0x15f /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .debug_abbrev  0x000005e3      0x157 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .debug_abbrev  0x0000073a       0xa6 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+
+.debug_line     0x00000000      0xf6e
+ *(.debug_line)
+ .debug_line    0x00000000       0xbb /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+ .debug_line    0x000000bb      0x157 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+ .debug_line    0x00000212       0xf3 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+ .debug_line    0x00000305       0x92 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_lib_ver.o)
+ .debug_line    0x00000397       0xa3 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+ .debug_line    0x0000043a       0x84 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_udivsi3.o)
+ .debug_line    0x000004be       0x5d /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x0000051b      0x165 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubdf3.o)
+ .debug_line    0x00000680      0x17a /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivdf3.o)
+ .debug_line    0x000007fa       0xa7 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpdf2.o)
+ .debug_line    0x000008a1       0x72 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixdfsi.o)
+ .debug_line    0x00000913       0x70 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_fixunsdfsi.o)
+ .debug_line    0x00000983       0x83 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_truncdfsf2.o)
+ .debug_line    0x00000a06      0x113 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_addsubsf3.o)
+ .debug_line    0x00000b19      0x11d /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_muldivsf3.o)
+ .debug_line    0x00000c36       0x9b /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_cmpsf2.o)
+ .debug_line    0x00000cd1       0xf2 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .debug_line    0x00000dc3       0xe3 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+ .debug_line    0x00000ea6       0xc8 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+
+.debug_frame    0x00000000      0x124
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x34 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+ .debug_frame   0x00000034       0x34 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+ .debug_frame   0x00000068       0x28 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+ .debug_frame   0x00000090       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+ .debug_frame   0x000000b0       0x2c /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/interwork/libgcc.a(_udivsi3.o)
+ .debug_frame   0x000000dc       0x20 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+ .debug_frame   0x000000fc       0x28 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+
+.debug_str      0x00000000      0x81c
+ *(.debug_str)
+ .debug_str     0x00000000      0x15a /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+                                0x1a4 (size before relaxing)
+ .debug_str     0x0000015a       0x8a /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+                                0x17a (size before relaxing)
+ .debug_str     0x000001e4       0x41 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+                                0x163 (size before relaxing)
+ .debug_str     0x00000225       0x78 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_lib_ver.o)
+                                0x181 (size before relaxing)
+ .debug_str     0x0000029d       0x47 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+                                0x153 (size before relaxing)
+ .debug_str     0x000002e4      0x3fc /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(errno.o)
+                                0x4a4 (size before relaxing)
+ .debug_str     0x000006e0       0x92 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(impure.o)
+                                0x4bc (size before relaxing)
+ .debug_str     0x00000772       0xaa /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+                                 0xd6 (size before relaxing)
+
+.debug_loc      0x00000000      0x52d
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x74 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(w_sqrt.o)
+ .debug_loc     0x00000074      0x35b /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)
+ .debug_loc     0x000003cf       0x4f /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_isnan.o)
+ .debug_loc     0x0000041e       0x13 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(s_matherr.o)
+ .debug_loc     0x00000431       0xfc /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libc.a(memcpy.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+OUTPUT(TML.elf elf32-littlearm)
+
+.debug_ranges   0x00000000       0x30
+ .debug_ranges  0x00000000       0x30 /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/lib/interwork/libm.a(e_sqrt.o)

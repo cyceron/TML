@@ -120,10 +120,10 @@ return 250;//SPI DONT WORK PROPERLY
 /*--------------------------PT100------------------------------------------------------*/
 float PT100(unsigned char channel,short *mb)
 {
-volatile unsigned char tab[]={0x01,0x13,0x00,0xff};
-volatile unsigned int temp;
-volatile double dummy;
-volatile float err;
+unsigned char tab[]={0x01,0x13,0x00,0xff};
+unsigned int temp;
+double dummy;
+float err;
 
 FIO0PIN &= ~(1<<30); //cs
 
@@ -179,7 +179,7 @@ if((tab[0]==0x13 || tab[0]==0x01) && (tab[1]==0x00) && tab[2]==0x20 && tab[3]==0
 		temp =((~tab[0] & 0x7f)<<16) | ((~tab[1] & 0xff)<<8) | ((~tab[2] & 0xff));
 		dummy = ((temp*2475.0)/0x7fffff)*1.0;
 		dummy=(err-(dummy/12.0));
-		*mb=((Z1+sqrt((Z2+Z3*dummy)))/Z4);
+		*mb=((Z1+sqrt((Z2+Z3*dummy)))/Z4)*10;
 		return 1;}
 }else{
 
@@ -255,7 +255,7 @@ if((tab[0]==0x1a || tab[0]==0x08) && (tab[1]==0x02 || tab[1]==0x08) && tab[2]==0
 			 mb[0]=dummy;}
 		else
 			{dummy=dummy+env_temp/100.0+er;
-			mb[0]=dummy;}
+			mb[0]=dummy*10;}
 		return 1;
 }else{
 

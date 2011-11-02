@@ -128,9 +128,9 @@ float err;
 FIO0PIN &= ~(1<<30); //cs
 
 if(channel == 1)
-	err= 169.40;		//By modyfiing this value we can add correction Channel 2 podobno 
+	err= 169.00;		//By modyfiing this value we can add correction Channel 2 podobno 
 if(channel == 2)
-	err= 169.50;		//like above but its for second channel			Channel 1 podobno
+	err= 169.00;		//like above but its for second channel			Channel 1 podobno
 
 spiTransferByte(0x4a);  //at first we gona set IDAC Control Register 
 spiTransferByte(0x01);
@@ -168,25 +168,29 @@ if((tab[0]==0x13 || tab[0]==0x01) && (tab[1]==0x00) && tab[2]==0x20 && tab[3]==0
 		usRegInputBuf[31+channel*3]=tab[1]=spiTransferByte(0xff);
 		usRegInputBuf[32+channel*3]=tab[2]=spiTransferByte(0xff);
 		
+		if((tab[0]==127)&&(tab[1]==255)&&(tab[2]==255))
+			{*mb=999;
+			return 4;}
+
 		if(!(tab[0] & 0x80)){
 		temp = (tab[0]<<16) | (tab[1]<<8) | tab[2];
 		dummy = ((temp*2475.0)/0x7fffff)*1.0;
 		dummy=((dummy/12.0)+err);
-		*mb=((Z1+sqrt((Z2+Z3*dummy)))/Z4);
+		*mb=((Z1+sqrt((Z2+Z3*dummy)))/Z4)*10.0;
 		return 0;}
 
 		if(tab[0] & 0x80){
 		temp =((~tab[0] & 0x7f)<<16) | ((~tab[1] & 0xff)<<8) | ((~tab[2] & 0xff));
 		dummy = ((temp*2475.0)/0x7fffff)*1.0;
 		dummy=(err-(dummy/12.0));
-		*mb=((Z1+sqrt((Z2+Z3*dummy)))/Z4)*10;
-		return 1;}
+		*mb=((Z1+sqrt((Z2+Z3*dummy)))/Z4)*10.0;
+		return 0;}
 }else{
 
 FIO0PIN |= (1<<30);
-
-}
 return 250;
+}
+
 
 }
 /*--------------------------Thermocouple-----------------------------------------------*/

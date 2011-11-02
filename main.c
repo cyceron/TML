@@ -145,8 +145,9 @@ int main(void)
 	ch[1].temp=&usRegInputBuf[CH2_TEMP];
 	ch[1].offset=usRegInputBuf[OFFSET2];
 	ch[1].status=&usRegInputBuf[CH2_STATUS];
- 	//offset(1);
-	//offset(2); 
+ 
+	state = 5;
+
     for( ;; )
     {
 		switch(state)
@@ -158,15 +159,15 @@ int main(void)
 			break;
 		case 2:
 			 if(ch[0].CurThermo == PT_100)
-				{PT100(1,&dummy);}
+				{usRegInputBuf[CH1_STATUS]=PT100(1,&dummy);}
 			 if(ch[0].CurThermo == thermocouple)
 			 	{Thermocouple(1,&dummy,(short)usRegInputBuf[ENV_TEMP]);}
 			 if((usRegInputBuf[27]=ads1247_BurnoutCurrentSense(1))<10)
-				{if((dummy)<900)	//Changes
+				{if((dummy)<800){	//Changes
 					usRegInputBuf[CH1_TEMP]=dummy;
-					usRegInputBuf[CH1_STATUS] = OK;}
-			 else
-				{usRegInputBuf[CH1_STATUS]=Broken_connection;}
+					usRegInputBuf[CH1_STATUS] = OK;}}
+			 	else
+					{usRegInputBuf[CH1_STATUS]=Broken_connection;}
 			 if(ch[1].CurThermo == NC)
 				{state=5;usRegInputBuf[CH2_STATUS]=Broken_connection;}
 			state=3;
@@ -178,22 +179,24 @@ int main(void)
 			break;
 		case 4:
 			if(ch[1].CurThermo == PT_100)
-				{PT100(2,&dummy);}
+				{usRegInputBuf[CH2_STATUS]=PT100(2,&dummy);}
 			if(ch[1].CurThermo == thermocouple)
 				{Thermocouple(2,&dummy,(short)usRegInputBuf[ENV_TEMP]);}	
 			if((usRegInputBuf[26]=ads1247_BurnoutCurrentSense(2))<10)
-				{if((dummy)<900) //Changes
+				{if((dummy)<800){
 					usRegInputBuf[CH2_TEMP]=dummy;
-					usRegInputBuf[CH2_STATUS] = OK;}
+					usRegInputBuf[CH2_STATUS] = OK;}}
 			else
 				usRegInputBuf[CH2_STATUS]=Broken_connection;
 			state=5;
 			break;
 		case 5:
-			ds1820_read(&usRegInputBuf[ENV_TEMP]);
+			if(!ds1820_read(&usRegInputBuf[ENV_TEMP]))
+				{usRegInputBuf[CH1_STATUS] = Broken_connection; usRegInputBuf[CH2_STATUS] = Broken_connection;
+					while(!ds1820_read(&usRegInputBuf[ENV_TEMP]));}
 			if(ch[0].CurThermo == NC){state=3;usRegInputBuf[CH1_STATUS] = Broken_connection;
-			if(ch[1].CurThermo == NC)state=5;}
-			state=1;
+				if(ch[1].CurThermo == NC){state=5;usRegInputBuf[CH2_STATUS] = Broken_connection;}}
+			else{state=1;}
 			break;
 		default :
 			break;

@@ -118,7 +118,7 @@ char onewire_read()   // 6, 9, 55
 unsigned int ds1820_read(short* temp)
 {
  char busy=0, i;
- static unsigned int state=9999,valid=0;
+ static unsigned int state=9999,valid;
  static char t2, t1;
  int  tt=0;
 

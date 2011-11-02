@@ -111,8 +111,9 @@ if((tab[0]==0xC8 || tab[0]==0xdA) && tab[1]==0x00 && tab[2]==0x30 && tab[3]==0x0
 	if(tab[0] & 0x80)
 		return ((~tab[0]) & 0x7f); //SPI WORKS FINE
 }else{
-
 FIO0PIN |= (1<<30);
+delay_us(2);
+FIO0PIN &=~(1<<30);
 return 250;//SPI DONT WORK PROPERLY
 }
 }
@@ -188,6 +189,9 @@ if((tab[0]==0x13 || tab[0]==0x01) && (tab[1]==0x00) && tab[2]==0x20 && tab[3]==0
 }else{
 
 FIO0PIN |= (1<<30);
+delay_us(2);
+FIO0PIN &=~(1<<30);
+
 return 250;
 }
 
@@ -262,9 +266,9 @@ if((tab[0]==0x1a || tab[0]==0x08) && (tab[1]==0x02 || tab[1]==0x08) && tab[2]==0
 			mb[0]=dummy*10;}
 		return 1;
 }else{
-
 FIO0PIN |= (1<<30);
-
+delay_us(2);
+FIO0PIN &=~(1<<30);
 return 250;
 }
 }

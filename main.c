@@ -68,25 +68,6 @@ int main(void)
 	/*-----------Port Direction---------------*/
 	DIODE1();
 	DIODE2();
-	/*//FIO0DIR|=(D2R);//|D2Y);
-	//FIO1DIR|=D2G;
-	//CLR_D2();
-	//CLR_D1();
-	//SET_D1Y();
-	//FIO0DIR|=(1<<14);
-	//FIO0PIN|=(1<<14);
-	//SET_D1R();
-	//SET_D2G();
-	//FIO0PIN|=D2R;
-	//FIO1PIN|=D1R;
-	FIO0PIN|=((1UL<<13));//|(1<<13);
-	FIO1PIN&=~D2G;//FIO0PIN&=~D2R;
-	FIO0PIN|=(1UL<<12);
-	//FIO0PIN|=D2R|
-	//FIO0PIN=FIO0PIN|(1UL<<13);
-
-//	FIO0PIN|=D2Y;
-	while(1);*/
 	/*----------------------------------------*/
 	/*------Tempearture Measurement IC--------*/
 	ads1247_init();

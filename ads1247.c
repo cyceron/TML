@@ -248,6 +248,8 @@ if((tab[0]==0x1a || tab[0]==0x08) && (tab[1]==0x02 || tab[1]==0x08) && tab[2]==0
 		dummy = ((temp*2048.0)/0x7fffff)*1.0;
 		dummy = dummy/64000.0;
 
+		dummy = dummy +0.040401784*env_temp/100.0+0.002647715;
+
 		dummy= A0  +A1*dummy 
 					  	+A2*(dummy*dummy) 
 					  	+A3*(dummy*dummy*dummy) 
@@ -259,10 +261,10 @@ if((tab[0]==0x1a || tab[0]==0x08) && (tab[1]==0x02 || tab[1]==0x08) && tab[2]==0
 		er=0;
 
 		if(sign == -1)
-			{dummy=-dummy + env_temp/100.0+er;
-			 mb[0]=dummy;}
+			{dummy=-dummy+er;
+			 mb[0]=dummy*10;}
 		else
-			{dummy=dummy+env_temp/100.0+er;
+			{dummy=dummy+er;
 			mb[0]=dummy*10;}
 		return 1;
 }else{

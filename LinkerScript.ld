@@ -34,6 +34,7 @@ MEMORY
   DATA (rw) : ORIGIN = 0x40000000, LENGTH = 0x00010000
   IAP6 (rw) : ORIGIN = 0x00006000, LENGTH = 0x00001000
   IAP7 (rw) : ORIGIN = 0x00007000, LENGTH = 0x00001000
+  CONST (rw) : ORIGIN = 0x00008000, LENGTH = 0x00001000
 }
 
 
@@ -82,7 +83,11 @@ SECTIONS
 	/*. = ALIGN(0x4);*/
 	/*. = 0x7000;*/
   } >IAP7
-
+  
+  .constant_data :
+  {
+	*(.constant)
+  } >CONST
   
 
 

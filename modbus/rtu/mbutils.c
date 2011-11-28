@@ -81,36 +81,7 @@ xMBUtilSetBits( UCHAR * ucByteBuf, USHORT usBitOffset, UCHAR ucNBits,
     ucByteBuf[usByteOffset + 1] = ( UCHAR )( usWordBuf >> BITS_UCHAR );
 }
 
-UCHAR
-xMBUtilGetBits( UCHAR * ucByteBuf, USHORT usBitOffset, UCHAR ucNBits )
-{
-    USHORT          usWordBuf;
-    USHORT          usMask;
-    USHORT          usByteOffset;
-    USHORT          usNPreBits;
 
-    /* Calculate byte offset for first byte containing the bit values starting
-     * at usBitOffset. */
-    usByteOffset = ( USHORT )( ( usBitOffset ) / BITS_UCHAR );
-
-    /* How many bits precede our bits to set. */
-    usNPreBits = ( USHORT )( usBitOffset - usByteOffset * BITS_UCHAR );
-
-    /* Prepare a mask for setting the new bits. */
-    usMask = ( USHORT )( ( 1 << ( USHORT ) ucNBits ) - 1 );
-
-    /* copy bits into temporary storage. */
-    usWordBuf = ucByteBuf[usByteOffset];
-    usWordBuf |= ucByteBuf[usByteOffset + 1] << BITS_UCHAR;
-
-    /* throw away unneeded bits. */
-    usWordBuf >>= usNPreBits;
-
-    /* mask away bits above the requested bitfield. */
-    usWordBuf &= usMask;
-
-    return ( UCHAR ) usWordBuf;
-}
 
 eMBException
 prveMBError2Exception( eMBErrorCode eErrorCode )

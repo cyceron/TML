@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
 
 		dummy = ((temp*2048.0)/0x7fffff)*1.0;
 		dummy = dummy/64000.0;
+		dummy=0.018516;
 		t= A0  +A1*dummy 
 					  	+A2*(dummy*dummy) 
 					  	+A3*(dummy*dummy*dummy) 
@@ -40,6 +41,11 @@ int main(int argc, char *argv[])
 					  	+A7*(dummy*dummy*dummy*dummy*dummy*dummy*dummy)
 					  	+A8*(dummy*dummy*dummy*dummy*dummy*dummy*dummy*dummy);
     cout<<"temperatura  "<<t<<"Voltage : "<<dummy;
+    
+    short tt;
+    tt=0x9101;
+    if((-3300<tt)&&(tt<7000))
+    cout<<endl<<"OK"<<endl<<tt<<endl;
     system("PAUSE");
     return EXIT_SUCCESS;
 }

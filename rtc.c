@@ -28,9 +28,6 @@ if(usRegInputBuf[CH2_STATUS]==4)  //2
 	else
 	{	/*FIO0PIN&=~D1Y;FIO1PIN&=~D1R;*/FIO0PIN|=D1G;}}
 
- 
-
-
 usRegInputBuf[25]=SEC;
 ILR = 0x03;
 VICVectAddr = 0x00000000;

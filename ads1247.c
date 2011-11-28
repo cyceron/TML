@@ -21,6 +21,9 @@ const  double A6 = -1184520000000.0;
 const  double A7 = 13869000000000.0;
 const  double A8 = -63370800000000.0;
 
+const double CJcomp_A = -0.00001879999;
+const double CJcomp_B = -0.03951820605;
+const double CJcomp_C = -0.0008277165;
 
 /*----------------------- Byte transfer through SPI-------------------------------------*/
 
@@ -124,14 +127,14 @@ float PT100(unsigned char channel,short *mb)
 unsigned char tab[]={0x01,0x13,0x00,0xff};
 unsigned int temp;
 double dummy;
-float err;
+//float err;
 
 FIO0PIN &= ~(1<<30); //cs
 
-if(channel == 1)
-	err= 169.00;		//By modyfiing this value we can add correction Channel 2 podobno 
-if(channel == 2)
-	err= 169.00;		//like above but its for second channel			Channel 1 podobno
+//if(channel == 1)
+//	err= 169.00;		//By modyfiing this value we can add correction Channel 2 podobno 
+//if(channel == 2)
+//	err= 169.00;		//like above but its for second channel			Channel 1 podobno
 
 spiTransferByte(0x4a);  //at first we gona set IDAC Control Register 
 spiTransferByte(0x01);
@@ -158,6 +161,7 @@ tab[0]=spiTransferByte(0xff);		// if some of this register have improper value, 
 tab[1]=spiTransferByte(0xff);		
 tab[2]=spiTransferByte(0xff);
 tab[3]=spiTransferByte(0xff);
+
 if((tab[0]==0x13 || tab[0]==0x01) && (tab[1]==0x00) && tab[2]==0x20 && tab[3]==0x30)
 {
 
@@ -165,25 +169,25 @@ if((tab[0]==0x13 || tab[0]==0x01) && (tab[1]==0x00) && tab[2]==0x20 && tab[3]==0
 			while(!(FIO0PIN & (1<<29)));
 
 		spiTransferByte(0x12);
-		usRegInputBuf[30+channel*3]=tab[0]=spiTransferByte(0xff);
-		usRegInputBuf[31+channel*3]=tab[1]=spiTransferByte(0xff);
-		usRegInputBuf[32+channel*3]=tab[2]=spiTransferByte(0xff);
+		/*usRegInputBuf[30+channel*3]=*/tab[0]=spiTransferByte(0xff);
+		/*usRegInputBuf[31+channel*3]=*/tab[1]=spiTransferByte(0xff);
+		/*usRegInputBuf[32+channel*3]=*/tab[2]=spiTransferByte(0xff);
 		
 		if((tab[0]==127)&&(tab[1]==255)&&(tab[2]==255))
-			{*mb=999;
+			{*mb=9999;
 			return 4;}
 
 		if(!(tab[0] & 0x80)){
 		temp = (tab[0]<<16) | (tab[1]<<8) | tab[2];
 		dummy = ((temp*2475.0)/0x7fffff)*1.0;
-		dummy=((dummy/12.0)+err);
+		dummy=((dummy/12.0)+169.0);
 		*mb=((Z1+sqrt((Z2+Z3*dummy)))/Z4)*10.0;
 		return 0;}
 
 		if(tab[0] & 0x80){
 		temp =((~tab[0] & 0x7f)<<16) | ((~tab[1] & 0xff)<<8) | ((~tab[2] & 0xff));
 		dummy = ((temp*2475.0)/0x7fffff)*1.0;
-		dummy=(err-(dummy/12.0));
+		dummy=(169.0-(dummy/12.0));
 		*mb=((Z1+sqrt((Z2+Z3*dummy)))/Z4)*10.0;
 		return 0;}
 }else{
@@ -206,8 +210,8 @@ FIO0PIN &= ~(1<<30);
 int sign=1;
  unsigned char tab[]={0x01,0x13,0x00,0x00};
  unsigned int temp;
- double dummy;
- unsigned int er;
+ double dummy,t;
+ //unsigned int er;
 spiTransferByte(0x40);
 spiTransferByte(0x03);
 	if(channel == 1)
@@ -230,15 +234,17 @@ tab[0]=spiTransferByte(0xff);
 tab[1]=spiTransferByte(0xff);
 tab[2]=spiTransferByte(0xff);
 tab[3]=spiTransferByte(0xff);
+
 if((tab[0]==0x1a || tab[0]==0x08) && (tab[1]==0x02 || tab[1]==0x08) && tab[2]==0x30 && tab[3]==0x60)
 {
 			while(FIO0PIN & (1<<29));
 			while(!(FIO0PIN & (1<<29)));
+			//while(FIO0PIN & (1<<29));
 
 		spiTransferByte(0x12);
-		usRegInputBuf[30+channel*3]=tab[0]=spiTransferByte(0xff);
-		usRegInputBuf[31+channel*3]=tab[1]=spiTransferByte(0xff);
-		usRegInputBuf[32+channel*3]=tab[2]=spiTransferByte(0xff);
+		/*usRegInputBuf[30+channel*3]=*/tab[0]=spiTransferByte(0xff);
+		/*usRegInputBuf[31+channel*3]=*/tab[1]=spiTransferByte(0xff);
+		/*usRegInputBuf[32+channel*3]=*/tab[2]=spiTransferByte(0xff);
 
 		temp = (tab[0]<<16) | (tab[1]<<8) | tab[2];
 		if(0x800000 & temp)
@@ -248,8 +254,9 @@ if((tab[0]==0x1a || tab[0]==0x08) && (tab[1]==0x02 || tab[1]==0x08) && tab[2]==0
 		dummy = ((temp*2048.0)/0x7fffff)*1.0;
 		dummy = dummy/64000.0;
 
-		dummy = dummy +0.040401784*env_temp/100.0+0.002647715;
 
+		t=-CJcomp_A*(env_temp/100)*(env_temp/100)-CJcomp_B*(env_temp/100)-CJcomp_C;
+		dummy+=(t/1000.0);
 		dummy= A0  +A1*dummy 
 					  	+A2*(dummy*dummy) 
 					  	+A3*(dummy*dummy*dummy) 
@@ -258,14 +265,14 @@ if((tab[0]==0x1a || tab[0]==0x08) && (tab[1]==0x02 || tab[1]==0x08) && tab[2]==0
 					  	+A6*(dummy*dummy*dummy*dummy*dummy*dummy)
 					  	+A7*(dummy*dummy*dummy*dummy*dummy*dummy*dummy)
 					  	+A8*(dummy*dummy*dummy*dummy*dummy*dummy*dummy*dummy);
-		er=0;
+		//er=0;
 
 		if(sign == -1)
-			{dummy=-dummy+er;
-			 mb[0]=dummy*10;}
+			{dummy=-dummy;
+			 mb[0]=(dummy)*10;}
 		else
-			{dummy=dummy+er;
-			mb[0]=dummy*10;}
+			{//dummy=dummy;
+			mb[0]=(dummy)*10;}
 		return 1;
 }else{
 FIO0PIN |= (1<<30);
@@ -275,7 +282,7 @@ return 250;
 }
 }
 
-int offset(unsigned char channel)
+/*int offset(unsigned char channel)
 {
 spiTransferByte(0x40);
 spiTransferByte(0x03);
@@ -301,5 +308,5 @@ spiTransferByte(0x70);	//0x60=64
 
 
 	
-}
+}*/
 

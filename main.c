@@ -134,9 +134,13 @@ int main(void)
 		switch(state)
 		{
 		case 1:
-			if(ch[0].CurThermo == NC){state = 3;usRegInputBuf[CH1_STATUS] = Broken_connection;}
+			if(ch[0].CurThermo == NC)
+				{state = 3;usRegInputBuf[CH1_STATUS] = Broken_connection;}
 			else
-				{if((usRegInputBuf[30]=ads1247_BurnoutCurrentSense(1))>10){state=3;usRegInputBuf[CH1_STATUS]=Broken_connection;}else{ state=2;}}
+				{if((usRegInputBuf[30]=ads1247_BurnoutCurrentSense(1))>10)
+					{state=3;usRegInputBuf[CH1_STATUS]=Broken_connection;}
+				else
+					{ state=2;}}
 			break;
 		case 2:
 			 if(ch[0].CurThermo == PT_100)
@@ -144,19 +148,24 @@ int main(void)
 			 if(ch[0].CurThermo == thermocouple)
 			 	{Thermocouple(1,&dummy,(short)usRegInputBuf[ENV_TEMP]);}
 			 if((usRegInputBuf[27]=ads1247_BurnoutCurrentSense(1))<10)
-				{if((dummy)<800){	//Changes
+				{if((dummy)<8000){	//Changes
 					usRegInputBuf[CH1_TEMP]=dummy;
 					usRegInputBuf[CH1_STATUS] = OK;}}
 			 	else
 					{usRegInputBuf[CH1_STATUS]=Broken_connection;}
 			 if(ch[1].CurThermo == NC)
 				{state=5;usRegInputBuf[CH2_STATUS]=Broken_connection;}
-			state=3;
+			 else
+				{state=3;}
 			break;
 		case 3:
-			if(ch[1].CurThermo == NC){state = 5;usRegInputBuf[CH2_STATUS] = Broken_connection;}
+			if(ch[1].CurThermo == NC)
+				{state = 5;usRegInputBuf[CH2_STATUS] = Broken_connection;}
 			else
-				{if((usRegInputBuf[29]=ads1247_BurnoutCurrentSense(2))>10){state=5;usRegInputBuf[CH2_STATUS]=Broken_connection;}else{state=4;}}
+				{if((usRegInputBuf[29]=ads1247_BurnoutCurrentSense(2))>10)
+					{state=5;usRegInputBuf[CH2_STATUS]=Broken_connection;}
+				else
+					{state=4;}}
 			break;
 		case 4:
 			if(ch[1].CurThermo == PT_100)
@@ -164,12 +173,12 @@ int main(void)
 			if(ch[1].CurThermo == thermocouple)
 				{Thermocouple(2,&dummy,(short)usRegInputBuf[ENV_TEMP]);}	
 			if((usRegInputBuf[26]=ads1247_BurnoutCurrentSense(2))<10)
-				{if((dummy)<800){
+				{if((dummy)<8000){
 					usRegInputBuf[CH2_TEMP]=dummy;
 					usRegInputBuf[CH2_STATUS] = OK;}}
 			else
 				usRegInputBuf[CH2_STATUS]=Broken_connection;
-			state=5;
+				state=5;
 			break;
 		case 5:
 			if(!ds1820_read(&usRegInputBuf[ENV_TEMP]))
@@ -181,29 +190,32 @@ int main(void)
 			break;
 		default :
 			break;
-		} 
+		}
+		 
 		if(usRegInputBuf[CH1_STATUS] != Broken_connection){
 			VICIntEnClr |= 0x2000;//Disable RTC Int
-			if((ch[0].threshold_ART+50) <(usRegInputBuf[CH1_TEMP]+50))
-				{if((ch[0].threshold_ALM+50) < (usRegInputBuf[CH1_TEMP]+50))
+			if((ch[0].threshold_ART+2000) <(usRegInputBuf[CH1_TEMP]+2000))
+				{if((ch[0].threshold_ALM+2000) < (usRegInputBuf[CH1_TEMP]+2000))
 					{FIO0PIN&=~D2Y;FIO1PIN&=~D2G;FIO0PIN|=D2R;
-					usRegInputBuf[CH1_STATUS]=ALARM;}										 //ALARM
+					usRegInputBuf[CH1_STATUS]=ALARM;}										//ALARM
 			 	else
 					{SET_D2Y();
-					usRegInputBuf[CH1_STATUS]=ALERT;}}									 //ALERT
+					usRegInputBuf[CH1_STATUS]=ALERT;}}									 	//ALERT
 			else
 			{FIO0PIN&=~D2Y;FIO1PIN|=D2G;usRegInputBuf[CH1_STATUS]=OK;}}else{FIO0PIN&=~(D2Y|D2R);VICIntEnable |= 0x2000;} //Enable RTC Int
+
 		if(usRegInputBuf[CH2_STATUS] != Broken_connection){
 			VICIntEnClr |= 0x2000;//Disable RTC Int
-			if((ch[1].threshold_ART+50) < (usRegInputBuf[CH2_TEMP]+50))
-				{if((ch[1].threshold_ALM+50) < (usRegInputBuf[CH2_TEMP]+50))
+			if((ch[1].threshold_ART+2000) < (usRegInputBuf[CH2_TEMP]+2000))
+				{if((ch[1].threshold_ALM+2000) < (usRegInputBuf[CH2_TEMP]+2000))
 					{FIO0PIN&=~D1Y;FIO0PIN&=~D1G;FIO1PIN|=D1R;
-					usRegInputBuf[CH2_STATUS]=ALARM;}									 //ALARM
+					usRegInputBuf[CH2_STATUS]=ALARM;}									 	//ALARM
 			 	else
 			 		{SET_D1Y();
-					usRegInputBuf[CH2_STATUS]=ALERT;}}//ALERT
+					usRegInputBuf[CH2_STATUS]=ALERT;}}										//ALERT
 			else
 			{SET_D1G(); usRegInputBuf[CH2_STATUS]=OK;}}else{FIO0PIN&=~D1Y;FIO1PIN&=~D1R;VICIntEnable |= 0x2000;} //Enable RTC Int  
+
 		AD5422_SetOutputVorI(ch);
 																							 
         ( void )eMBPoll(  );	
@@ -254,7 +266,7 @@ if(eMode==1){
 	NVOL_SetVariable(CH2_THERMO, (unsigned char* )&usRegInputBuf[CH2_THERMO], sizeof(unsigned short));
 	NVOL_SetVariable(CH2_UP_LVL, (unsigned char* )&usRegInputBuf[CH2_UP_LVL], sizeof(unsigned short));
 	NVOL_SetVariable(CH2_DW_LVL, (unsigned char* )&usRegInputBuf[CH2_DW_LVL], sizeof(unsigned short));
-	NVOL_SetVariable(OFFSET1,    (unsigned char* )&usRegInputBuf[OFFSET1],     sizeof(unsigned short));
+	NVOL_SetVariable(OFFSET1,    (unsigned char* )&usRegInputBuf[OFFSET1],    sizeof(unsigned short));
 	NVOL_SetVariable(CH1_ALERT , (unsigned char* )&usRegInputBuf[CH1_ALERT] , sizeof(unsigned short));
 	NVOL_SetVariable(CH2_ALERT , (unsigned char* )&usRegInputBuf[CH2_ALERT] , sizeof(unsigned short));
 	NVOL_SetVariable(CH1_ALARM , (unsigned char* )&usRegInputBuf[CH1_ALARM] , sizeof(unsigned short));

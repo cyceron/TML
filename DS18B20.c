@@ -120,7 +120,7 @@ unsigned int ds1820_read(short* temp)
  char busy=0, i;
  static unsigned int state=9999,valid;
  static char t2, t1;
- int  tt=0;
+ short  tt=0;
 
 switch (state)
  {
@@ -159,10 +159,10 @@ switch (state)
  case 8:
  	t2 = onewire_read();
 	state =0;
-	tt= ((int) t2<<8) | ((int)t1 & 0xFF);
-	if((-3300<tt)&&(tt<7000))
+	tt= ((short) t2<<8) | ((short)t1 & 0xFF);
+	if((-880<tt)&&(tt<2000))
 	{
- 		*temp =(short)( (100.0*((float)tt / 16.0)));
+ 		*temp =(short)( (100.0*(tt / 16.0)));
 		valid=1;
 		}
 	break;

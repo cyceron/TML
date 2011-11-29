@@ -1,4 +1,4 @@
-portevent.o: modbus\rtu\portevent.c modbus/include/mb.h \
+portevent.o: modbus/rtu/portevent.c modbus/include/mb.h \
   modbus/include/port.h \
   /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/assert.h \
   /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/_ansi.h \

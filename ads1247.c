@@ -256,7 +256,13 @@ if((tab[0]==0x1a || tab[0]==0x08) && (tab[1]==0x02 || tab[1]==0x08) && tab[2]==0
 
 
 		t=-CJcomp_A*(env_temp/100)*(env_temp/100)-CJcomp_B*(env_temp/100)-CJcomp_C;
-		dummy+=(t/1000.0);
+		usRegInputBuf[33]=dummy*1000000.0;
+		usRegInputBuf[34]=t*1000.0;
+		if(sign==-1)
+			{dummy =dummy - (t/1000.0);}
+		else
+			{dummy+=(t/1000.0);}
+
 		dummy= A0  +A1*dummy 
 					  	+A2*(dummy*dummy) 
 					  	+A3*(dummy*dummy*dummy) 

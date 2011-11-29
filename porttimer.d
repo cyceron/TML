@@ -1,4 +1,4 @@
-porttimer.o: modbus\rtu\porttimer.c C:/Keil/ARM/INC/Philips/LPC214X.h \
+porttimer.o: modbus/rtu/porttimer.c C:/Keil/ARM/INC/Philips/LPC214X.h \
   modbus/include/port.h \
   /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/assert.h \
   /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/_ansi.h \

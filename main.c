@@ -20,6 +20,7 @@
 /* ----------------------- Defines ------------------------------------------*/
 #define REG_INPUT_START 1
 #define REG_INPUT_NREGS 50
+#define REG_INPUT_CONFIG 13
 
 /* ----------------------- Static variables ---------------------------------*/
 USHORT   usRegInputStart = REG_INPUT_START;
@@ -249,7 +250,7 @@ if(eMode==0){
 }
 if(eMode==1){
 	if( ( usAddress >= REG_INPUT_START )
-        && ( usAddress + usNRegs <= REG_INPUT_START + REG_INPUT_NREGS ) )
+        && ( usAddress + usNRegs <= REG_INPUT_START + REG_INPUT_CONFIG ) )
     {
 		
 		iRegIndex = (int) (usAddress - usRegInputStart);

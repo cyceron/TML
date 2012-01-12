@@ -425,47 +425,47 @@
             <File>
               <FileName>mb.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\modbus/mb.c</FilePath>
+              <FilePath>.\modbus\mb.c</FilePath>
             </File>
             <File>
               <FileName>mbcrc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\modbus/rtu/mbcrc.c</FilePath>
+              <FilePath>.\modbus\rtu\mbcrc.c</FilePath>
             </File>
             <File>
               <FileName>mbfuncholding.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\modbus/rtu/mbfuncholding.c</FilePath>
+              <FilePath>.\modbus\rtu\mbfuncholding.c</FilePath>
             </File>
             <File>
               <FileName>mbrtu.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\modbus/rtu/mbrtu.c</FilePath>
+              <FilePath>.\modbus\rtu\mbrtu.c</FilePath>
             </File>
             <File>
               <FileName>port.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\modbus/rtu/port.c</FilePath>
+              <FilePath>.\modbus\rtu\port.c</FilePath>
             </File>
             <File>
               <FileName>portevent.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\modbus/rtu/portevent.c</FilePath>
+              <FilePath>.\modbus\rtu\portevent.c</FilePath>
             </File>
             <File>
               <FileName>portserial.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\modbus/rtu/portserial.c</FilePath>
+              <FilePath>.\modbus\rtu\portserial.c</FilePath>
             </File>
             <File>
               <FileName>porttimer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\modbus/rtu/porttimer.c</FilePath>
+              <FilePath>.\modbus\rtu\porttimer.c</FilePath>
             </File>
             <File>
               <FileName>mbutils.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\modbus/rtu/mbutils.c</FilePath>
+              <FilePath>.\modbus\rtu\mbutils.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -485,12 +485,12 @@
             <File>
               <FileName>armint.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\NVS/armint.c</FilePath>
+              <FilePath>.\NVS\armint.c</FilePath>
             </File>
             <File>
               <FileName>flash_nvol.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\NVS/flash_nvol.c</FilePath>
+              <FilePath>.\NVS\flash_nvol.c</FilePath>
             </File>
           </Files>
         </Group>

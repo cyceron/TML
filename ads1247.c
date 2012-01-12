@@ -117,8 +117,8 @@ if((tab[0]==0xC8 || tab[0]==0xdA) && tab[1]==0x00 && tab[2]==0x30 && tab[3]==0x0
 FIO0PIN |= (1<<30);
 delay_us(2);
 FIO0PIN &=~(1<<30);
-return 250;//SPI DONT WORK PROPERLY
 }
+return 250;//SPI DONT WORK PROPERLY
 }
 
 /*--------------------------PT100------------------------------------------------------*/
@@ -195,11 +195,8 @@ if((tab[0]==0x13 || tab[0]==0x01) && (tab[1]==0x00) && tab[2]==0x20 && tab[3]==0
 FIO0PIN |= (1<<30);
 delay_us(2);
 FIO0PIN &=~(1<<30);
-
-return 250;
 }
-
-
+return 250;
 }
 /*--------------------------Thermocouple-----------------------------------------------*/
 float Thermocouple(unsigned char channel, short *mb, short env_temp)
@@ -255,7 +252,7 @@ if((tab[0]==0x1a || tab[0]==0x08) && (tab[1]==0x02 || tab[1]==0x08) && tab[2]==0
 		dummy = dummy/64000.0;
 
 
-		t=-CJcomp_A*(env_temp/100)*(env_temp/100)-CJcomp_B*(env_temp/100)-CJcomp_C;
+		t=-CJcomp_A*(env_temp/100.0)*(env_temp/100.0)-CJcomp_B*(env_temp/100.0)-CJcomp_C;
 		usRegInputBuf[33]=dummy*1000000.0;
 		usRegInputBuf[34]=t*1000.0;
 		if(sign==-1)

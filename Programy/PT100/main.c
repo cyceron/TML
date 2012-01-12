@@ -27,6 +27,7 @@ err=169.0;
 		temp =((~tab[0] & 0x7f)<<16) | ((~tab[1] & 0xff)<<8) | ((~tab[2] & 0xff));
 		dummy = ((temp*2475.0)/0x7fffff)*1.0;
 		temp=dummy=((dummy/12.0));
+		dummy=218.93;
 		dummy=((Z1+sqrt((Z2+Z3*dummy)))/Z4);}
 		cout<<"temperatura : "<<dummy<<"  "<<temp<<endl;
      system("PAUSE");

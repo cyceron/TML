@@ -1,22 +1,26 @@
 mbfuncholding.o: modbus/rtu/mbfuncholding.c \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/stdlib.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/_ansi.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/newlib.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/sys/config.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/machine/ieeefp.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/include/stddef.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/sys/reent.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/_ansi.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/sys/_types.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/sys/lock.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/machine/stdlib.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/alloca.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/string.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/sys/string.h \
-  modbus/include/port.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/assert.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/inttypes.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/stdint.h \
-  modbus/include/mb.h modbus/include/port.h modbus/include/mbport.h \
-  modbus/include/mbproto.h modbus/include/mbframe.h \
-  modbus/include/mbproto.h modbus/include/mbconfig.h
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/stdlib.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/machine/ieeefp.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/_ansi.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/newlib.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/sys/config.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/sys/features.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/include/stddef.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/sys/reent.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/_ansi.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/sys/_types.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/machine/_types.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/machine/_default_types.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/sys/lock.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/machine/stdlib.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/alloca.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/string.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/sys/string.h \
+ modbus/include/port.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/assert.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/inttypes.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/include/stdint.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/stdint.h \
+ modbus/include/mb.h modbus/include/port.h modbus/include/mbport.h \
+ modbus/include/mbproto.h modbus/include/mbframe.h \
+ modbus/include/mbproto.h modbus/include/mbconfig.h

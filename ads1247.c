@@ -50,20 +50,22 @@ FIO0PIN &= ~(1<<30);
 
 FIO1DIR |= 1<<16;					//START
 FIO1PIN &= ~(1<<16);
+FIO1PIN |= (1<<16);
 
 FIO0DIR &= ~(1<<29);			    //DRDY
+
+spiTransferByte(0x07);				
+delay_ms(200);
 
 spiTransferByte(0xff);				//SDATAC
 spiTransferByte(0x16);
 
-FIO1PIN |= (1<<16);					//START
+spiTransferByte(0x04);
+	spiTransferByte(0x04);
+	delay_ms(200);
 
-spiTransferByte(0xff);				//PO INIT
-spiTransferByte(0x0E);				
-for(i=0;i<9999999;i++);
-
-spiTransferByte(0x62);				//Self Offset Calibration
-while(FIO0PIN & (1<<29));
+//spiTransferByte(0x62);				//Self Offset Calibration, i dont know why itsnt working
+//while(FIO0PIN & (1<<29));
 
 }
 
@@ -72,7 +74,9 @@ while(FIO0PIN & (1<<29));
 unsigned int ads1247_BurnoutCurrentSense(unsigned char channel)
 {
 unsigned char tab[]={0x00,0xc1,0xd3,0x00,0x00};
-	FIO0PIN &= ~(1<<30);				//CS
+	FIO0PIN |= (1<<30);
+delay_us(2);
+FIO0PIN &=~(1<<30);
 	FIO1PIN |= (1<<16);             //Set Start
 
 spiTransferByte(0x4a);				
@@ -88,7 +92,8 @@ spiTransferByte(0x03);	   			//Write 4 registers
 	if(channel == 2)
 		spiTransferByte(0xc8);		//AIN0 positive AIN1 Negative Burnoutcurrent source 10uA //C1 Pt100		channel 2 
 spiTransferByte(0x00);				//BIAS turned off
-spiTransferByte(0x30);				//Internal reference is always on, On board reference selected 
+spiTransferByte(0x30);				//Internal reference is always on, On board reference selected
+delay_ms(20); 
 spiTransferByte(0x07);				//2000SPS
 
 
@@ -100,15 +105,20 @@ tab[1]=spiTransferByte(0xff);
 tab[2]=spiTransferByte(0xff);
 tab[3]=spiTransferByte(0xff);
 
-if((tab[0]==0xC8 || tab[0]==0xdA) && tab[1]==0x00 && tab[2]==0x30 && tab[3]==0x07)
+if((tab[0]==0xC8 || tab[0]==0xdA) && (tab[1]==0x00) && (tab[2]==0x30) && (tab[3]==0x07))
 {
+	spiTransferByte(0xff);
+	spiTransferByte(0x04);
+	spiTransferByte(0x04);
+	//delay_ms(300);
 	while(FIO0PIN & (1<<29));
 	while(!(FIO0PIN & (1<<29)));
 
 	spiTransferByte(0x12);
-	tab[0]=spiTransferByte(0xff);
-	tab[1]=spiTransferByte(0xff);
-	tab[2]=spiTransferByte(0xff);
+	usRegInputBuf[30+channel*3]=tab[0]=spiTransferByte(0xff);
+	usRegInputBuf[31+channel*3]=tab[1]=spiTransferByte(0xff);
+	usRegInputBuf[32+channel*3]=tab[2]=spiTransferByte(0xff);
+	//spiTransferByte(0xff);
 	if(!(tab[0] & 0x80))
 		return (tab[0]);
 	if(tab[0] & 0x80)
@@ -124,37 +134,32 @@ return 250;//SPI DONT WORK PROPERLY
 /*--------------------------PT100------------------------------------------------------*/
 float PT100(unsigned char channel,short *mb)
 {
-unsigned char tab[]={0x01,0x13,0x00,0xff};
-unsigned int temp;
-double dummy;
-//float err;
+volatile unsigned char tab[]={0x01,0x13,0x00,0xff};
+volatile unsigned int temp;
+volatile double dummy;
 
 FIO0PIN &= ~(1<<30); //cs
 
-//if(channel == 1)
-//	err= 169.00;		//By modyfiing this value we can add correction Channel 2 podobno 
-//if(channel == 2)
-//	err= 169.00;		//like above but its for second channel			Channel 1 podobno
-
 spiTransferByte(0x4a);  //at first we gona set IDAC Control Register 
 spiTransferByte(0x01);
-spiTransferByte(0x03);
+spiTransferByte(0x07);
 	if(channel ==1)
 		spiTransferByte(0x23); //IDAC Configuration for channel 1
 	if(channel ==2)
 		spiTransferByte(0x01); //IDAC Configuration for channel 2
-spiTransferByte(0x41); 
-spiTransferByte(0x02);
-spiTransferByte(0x00); 		   //VBIAS
-spiTransferByte(0x20); 		   //MUX1
-spiTransferByte(0x30);		   //SYS0
-
-spiTransferByte(0x40);
-spiTransferByte(0x00);
+spiTransferByte(0x40); 
+spiTransferByte(0x03);
 if(channel == 1)
 		spiTransferByte(0x13);//MUX0
 if(channel == 2)
 		spiTransferByte(0x01);//MUX0
+spiTransferByte(0x00); 		   //VBIAS
+spiTransferByte(0x20); 		   //MUX1
+spiTransferByte(0x30);		   //SYS0
+delay_ms(30);
+
+
+
 spiTransferByte(0x20);				//Read Function
 spiTransferByte(0x03);				//Read 4 registers it is for connection validation 
 tab[0]=spiTransferByte(0xff);		// if some of this register have improper value, function returns 250  
@@ -165,8 +170,13 @@ tab[3]=spiTransferByte(0xff);
 if((tab[0]==0x13 || tab[0]==0x01) && (tab[1]==0x00) && tab[2]==0x20 && tab[3]==0x30)
 {
 
+		   spiTransferByte(0xff);
+	spiTransferByte(0x04);
+	spiTransferByte(0x04);
 			while(FIO0PIN & (1<<29));
 			while(!(FIO0PIN & (1<<29)));
+
+			
 
 		spiTransferByte(0x12);
 		/*usRegInputBuf[30+channel*3]=*/tab[0]=spiTransferByte(0xff);
@@ -180,14 +190,14 @@ if((tab[0]==0x13 || tab[0]==0x01) && (tab[1]==0x00) && tab[2]==0x20 && tab[3]==0
 		if(!(tab[0] & 0x80)){
 		temp = (tab[0]<<16) | (tab[1]<<8) | tab[2];
 		dummy = ((temp*2475.0)/0x7fffff)*1.0;
-		dummy=((dummy/12.0)+169.0);
+		dummy=((dummy/12.0)+168.8);
 		*mb=((Z1+sqrt((Z2+Z3*dummy)))/Z4)*10.0;
 		return 0;}
 
 		if(tab[0] & 0x80){
 		temp =((~tab[0] & 0x7f)<<16) | ((~tab[1] & 0xff)<<8) | ((~tab[2] & 0xff));
 		dummy = ((temp*2475.0)/0x7fffff)*1.0;
-		dummy=(169.0-(dummy/12.0));
+		dummy=(168.8-(dummy/12.0));
 		*mb=((Z1+sqrt((Z2+Z3*dummy)))/Z4)*10.0;
 		return 0;}
 }else{
@@ -236,7 +246,6 @@ if((tab[0]==0x1a || tab[0]==0x08) && (tab[1]==0x02 || tab[1]==0x08) && tab[2]==0
 {
 			while(FIO0PIN & (1<<29));
 			while(!(FIO0PIN & (1<<29)));
-			//while(FIO0PIN & (1<<29));
 
 		spiTransferByte(0x12);
 		/*usRegInputBuf[30+channel*3]=*/tab[0]=spiTransferByte(0xff);

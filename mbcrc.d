@@ -1,9 +1,11 @@
 mbcrc.o: modbus/rtu/mbcrc.c modbus/include/port.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/assert.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/_ansi.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/newlib.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/sys/config.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/machine/ieeefp.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/inttypes.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/../../../../arm-elf/sys-include/stdint.h \
-  /cygdrive/c/gnuarm/bin/../lib/gcc/arm-elf/4.1.1/include/stddef.h
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/assert.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/_ansi.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/newlib.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/sys/config.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/machine/ieeefp.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/sys/features.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/inttypes.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/include/stdint.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/../../../../arm-none-eabi/include/stdint.h \
+ c:\program\ files\codesourcery\sourcery\ g++\ lite\bin\../lib/gcc/arm-none-eabi/4.5.2/include/stddef.h

@@ -269,7 +269,7 @@
             <bBE>0</bBE>
             <interw>1</interw>
             <VariousControls>
-              <MiscControls>-mno-fpu</MiscControls>
+              <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
               <IncludePath></IncludePath>

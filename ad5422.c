@@ -1,6 +1,6 @@
 #include "ad5422.h"
 #include <lpc213x.h>
-
+#include "ds18b20.h"
 
 /*----------------------- Byte transfer through SPI-------------------------------------*/
 static char spiTransferByteAD(char byte)
@@ -26,11 +26,13 @@ spiTransferByteAD(0x56);//RSTREG);		//First AD5412/22 Reset Register
 spiTransferByteAD(0x00);				//
 spiTransferByteAD(0x01);				//Reset
 SET_LATCH();
+delay_ms(1);
 CLR_LATCH();
 spiTransferByteAD(CNTRLREG);			//First AD5412/22 Address Word Configuration Register
 spiTransferByteAD(0x00);
 spiTransferByteAD(0x08);				//Daisy-Chain Enable
 SET_LATCH();
+delay_ms(1);
 CLR_LATCH();
 spiTransferByteAD(CNTRLREG);			//First AD5412/22 Address Word Configuration Register
 spiTransferByteAD(0x30);
@@ -39,14 +41,16 @@ spiTransferByteAD(RSTREG);				//Second AD5412/22 Reset Register
 spiTransferByteAD(0x00);
 spiTransferByteAD(0x01);				//RESET
 SET_LATCH();
+delay_ms(1);
 CLR_LATCH();
 spiTransferByteAD(CNTRLREG);			//First AD5412/22 Address Word Configuration Register
 spiTransferByteAD(0x30);
 spiTransferByteAD(0x0D);				//0x05=4-20mA, Daisy-Chain
 spiTransferByteAD(CNTRLREG);			//Second AD5412/22 Address Word Configuration Register
 spiTransferByteAD(0x30);
-spiTransferByteAD(0x0d);				//4-20mA
+spiTransferByteAD(0x0D);				//4-20mA
 SET_LATCH();
+delay_ms(1);
 CLR_LATCH();
 return 1;
 }
@@ -62,33 +66,33 @@ unsigned short data[2];
 CLR_LATCH();
 for(i=0;i<2;i++){
 	if((*(ch[i].status)==OK)||(*(ch[i].status)==ALERT)||(*(ch[i].status)==ALARM))
-	switch(_4_20mA)
-	{
-	case _0_5V:
-		{dummy=(5.0/((ch[i].up_lvl)-(ch[i].dw_lvl)));
-		voltage =((dummy)*((*ch[i].temp)+ch[i].offset)-(ch[i].dw_lvl)*(dummy))*1.0;
-		data[i] = (voltage/5)*0xffff;
-		break;}
-	case _0_10V:
-		{dummy=(10.0/((ch[i].up_lvl)-(ch[i].dw_lvl)));
-		voltage =((dummy)*((*ch[i].temp)+ch[i].offset)-(ch[i].dw_lvl)*(dummy))*1.0;
-		data[i] = (voltage/10)*0xffff;
-		break;}
-	case _4_20mA:
-		{dummy=(16.0/((ch[i].up_lvl)-(ch[i].dw_lvl)));
-		voltage =((dummy)*((*ch[i].temp)+ch[i].offset)+4.0-(ch[i].dw_lvl)*(dummy))*1.0;
-		if(voltage<=20)
-			data[i] = (unsigned int)(((voltage-4.0)/16.0)*0xffff);
-		else
-			data[i] = 0xffff;
-		break;}
-	case _0_20mA:
-		{break;}
-	case _0_24mA:
-		{break;}
-	}
+		switch(_4_20mA)
+		{
+		case _0_5V:
+			{dummy=(5.0/((ch[i].up_lvl)-(ch[i].dw_lvl)));
+			voltage =((dummy)*((*ch[i].temp)+ch[i].offset)-(ch[i].dw_lvl)*(dummy))*1.0;
+			data[i] = (voltage/5)*0xffff;
+			break;}
+		case _0_10V:
+			{dummy=(10.0/((ch[i].up_lvl)-(ch[i].dw_lvl)));
+			voltage =((dummy)*((*ch[i].temp)+ch[i].offset)-(ch[i].dw_lvl)*(dummy))*1.0;
+			data[i] = (voltage/10)*0xffff;
+			break;}
+		case _4_20mA:
+			{dummy=(16.0/((ch[i].up_lvl)-(ch[i].dw_lvl)));
+			voltage =((dummy)*((*ch[i].temp)+ch[i].offset)+4.0-(ch[i].dw_lvl)*(dummy))*1.0;
+			if(voltage<=20)
+				data[i] = (unsigned int)(((voltage-4.0)/16.0)*0xffff);
+			else
+				data[i] = 0xffff;
+			break;}
+		case _0_20mA:
+			{break;}
+		case _0_24mA:
+			{break;}
+		}
 	else
-	data[i]=0;
+		data[i]=0;
 }
 spiTransferByteAD(0x01);
 spiTransferByteAD((unsigned char)(data[0]>>8));
